@@ -30,6 +30,9 @@ return packer.startup(function(use)
   -- packer
   use("wbthomason/packer.nvim")
 
+  -- lua functions that many plugins use
+  use("nvim-lua/plenary.nvim")
+
   -- colorscheme
   use("bluz71/vim-nightfly-guicolors")
 
@@ -41,6 +44,22 @@ return packer.startup(function(use)
   -- essential plugins
   use("tpope/vim-surround")
   use("vim-scripts/ReplaceWithRegister")
+
+  -- commenting with gc
+  use("numToStr/Comment.nvim")
+
+  -- file explorer
+  use("nvim-tree/nvim-tree.lua")
+
+  -- icons
+  use("kyazdani42/nvim-web-devicons")
+
+  -- statusline
+  use("nvim-lualine/lualine.nvim")
+
+  -- fuzzy finding
+  use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"}) -- dependency
+  use({"nvim-telescope/telescope.nvim", branch = "0.1.x" })
 
   if packer_bootstrap then
     require("packer").sync()
